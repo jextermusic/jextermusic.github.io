@@ -31,7 +31,7 @@ html,body{
 }
 
 #main{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
 }
 
@@ -67,7 +67,7 @@ html,body{
 }
 
 #bluroverlay{
-    height: 100%;
+    height: 100vh;
     width: 100%;
     backdrop-filter: blur(5px);
     position: fixed;
@@ -76,33 +76,42 @@ html,body{
 }
 
 #quotes{
+    overflow-x: hidden;
     display: flex;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     position: relative;
     z-index: 1;
-    flex-direction: column;
 }
 
 #quotes img {
     height: 50%;
     width: 50%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
-#quotes img:nth-child(3n){
+/* #quotes img:nth-child(3n){
     position: relative;
     left: 50%;
     height: 60vh;
-}
+} */
 
 #text1 {
     font-family: SF Pro Display;
-    display: inline;
-    width: fit-content;
+    display: inline-block;
+    width: 80%;
+    height: 30%;
+    position: relative;
+    left: 80%;
+    top: 10%;
 }
 
 #quotes2 {
-    height: 100%;
+    overflow-x: hidden;
+    height: 100vh;
     width: 100%;
     z-index: 2;
     font-family: Candara;
@@ -113,10 +122,32 @@ html,body{
 #quotes2 h1{
     display: inline-block;
     width: 80%;
-    padding: 40px;
+    padding: 8%;
 }
 
 #final2 {
     position: relative;
     top: 20%;
+}
+
+@media only screen and (max-width:500px){
+    #quotes img {
+        height: 30vh;
+        width: 100%;
+    }
+    #text1{
+        width: 80%;
+        height: 30%;
+    }
+
+    #quotes2 h1{
+        position: relative;
+        top: 20%;
+        width: 100%;
+    }
+
+    #quotes2 {
+        overflow-x: hidden;
+        font-size: 12px;
+    }
 }

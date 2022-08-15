@@ -1,11 +1,11 @@
-var circle = document.querySelector("#circle")
+// var circle = document.querySelector("#circle")
 
 
-window.addEventListener("mousemove", function(dets){
-    console.log(dets)
-    circle.style.top = `${dets.clientY}px`;
-    circle.style.left = `${dets.clientX}px`;
-})
+// window.addEventListener("mousemove", function(dets){
+//     console.log(dets)
+//     circle.style.top = `${dets.clientY}px`;
+//     circle.style.left = `${dets.clientX}px`;
+// })
 
 gsap.set("#saffron,#white,#green",{
     width: "0%",
@@ -20,9 +20,8 @@ gsap.set("#bluroverlay",{
     opacity: 0
 })
 
-gsap.set("#img1,#text1,#img2",{
-    x: "-100",
-    opacity: 0
+gsap.set("#img1,#img2,#img3",{
+    left: "100%",
 })
 
 gsap.set("#quotes2 h1",{
@@ -68,38 +67,38 @@ tl1.to("#bluroverlay",{
 var tl2 = gsap.timeline({
     scrollTrigger: {
         trigger: "#quotes",
-        start: "0",
-        end: "450%",
-        scrub: 3,
+        start: "0%",
+        end: "350%",
+        scrub: 5,
         pin: true,
         // markers: true
     }
 })
 
-tl2.to("#bluroverlay",{
-    display: "none"
-})
-
 tl2.to("#quotes",{
     ease: "expo.inOut",
-    duration: 2,
     background: "rgb(255,111,0)",
     background: "linear-gradient(111deg, rgba(255,111,0,1) 13%, rgba(255,255,255,1) 52%, rgba(0,162,35,1) 96%)"
 })
 
-tl2.to("#img1,#text1,#img2",{
-    ease: "ease.inOut",
-    opacity: 1,
-    x: "0",
-    stagger: 2
+tl2.to('#img1,#text1,#img2,#img3',{
+    ease: "expo.in",
+    left: "-150%",
 })
+
+// tl2.to("#img1,#text1,#img2",{
+//     ease: "ease.inOut",
+//     opacity: 1,
+//     x: "0",
+//     stagger: 2
+// })
 
 var tl3 = gsap.timeline({
     scrollTrigger: {
         trigger: "#quotes2",
         start: "0",
         end: "200%",
-        scrub: 3,
+        scrub: 5,
         pin: true,
         // markers: true
     }
