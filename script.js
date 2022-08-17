@@ -2,7 +2,6 @@ var circle = document.querySelector("#circle")
 
 
 window.addEventListener("mousemove", function(dets){
-    console.log(dets)
     circle.style.top = `${dets.clientY}px`;
     circle.style.left = `${dets.clientX}px`;
 })
